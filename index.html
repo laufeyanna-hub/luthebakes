@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luthé Bakes | Homemade Bakery Gen-Z | Metro Lampung</title>
+  <meta name="description" content="Luthé Bakes - Homemade bakery dari Metro, Lampung. Brownies, Bento Cake, dan Hampers Kue Kering. Authentic, Affordable, Gen-Z Friendly!">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #FF6B6B;
+      --secondary: #4ECDC4;
+      --accent: #FFE66D;
+      --dark: #1A1A2E;
+      --darker: #16213E;
+      --light: #F7FFF7;
+      --gray: #E0E0E0;
+      --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --shadow: 0 10px 40px rgba(0,0,0,0.1);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .brand-font {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 5px;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 0;
+      background: rgba(26, 26, 46, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      transition: all 0.3s;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    nav.scrolled {
+      padding: 15px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: var(--gradient-2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      margin-top: 80px;
+      padding: 100px 20px;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 119, 198, 0.2) 0%, transparent 50%),
+        var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: var(--gradient-1);
+      border-radius: 50%;
+      opacity: 0.1;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: var(--gray);
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: var(--gradient-2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: var(--gradient-2);
+      color: white;
+      box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(245, 87, 108, 0.5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--light);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--primary);
+    }
+
+    .hero-image {
+      position: relative;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-image-placeholder {
+      width: 100%;
+      aspect-ratio: 1;
+      background: var(--gradient-1);
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image-placeholder::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      transform: rotate(45deg);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+
+    /* Section Styles */
+    section {
+      padding: 100px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #fff 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-header p {
+      color: var(--gray);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* About Section - FIXED: Side by side */
+    .about {
+      background: var(--darker);
+    }
+
+    .about-grid {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image,
+    .about-content {
+      flex: 1;
+    }
+
+    .about-image-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--gradient-3);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .about-content h3 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .about-content p {
+      color: var(--gray);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .quote {
+      border-left: 4px solid var(--primary);
+      padding-left: 20px;
+      margin: 30px 0;
+      font-style: italic;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    /* Products Section */
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 12px 30px;
+      background: rgba(255,255,255,0.05);
+      border: 2px solid rgba(255,255,255,0.1);
+      color: var(--light);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 600;
+      font-family: inherit;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--gradient-2);
+      border-color: transparent;
+      transform: translateY(-2px);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: var(--darker);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      z-index: 10;
+    }
+
+    .badge-daily {
+      background: var(--gradient-1);
+      color: white;
+    }
+
+    .badge-po {
+      background: var(--gradient-2);
+      color: white;
+    }
+
+    .badge-seasonal {
+      background: var(--gradient-3);
+      color: white;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(135deg, #667eea20, #764ba220);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-rating {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 5px 12px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .product-rating i {
+      color: var(--accent);
+    }
+
+    .product-info {
+      padding: 25px;
+    }
+
+    .product-category {
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .product-title {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--light);
+    }
+
+    .product-desc {
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: var(--gradient-2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .product-price .original {
+      font-size: 1rem;
+      color: var(--gray);
+      text-decoration: line-through;
+      margin-left: 8px;
+      -webkit-text-fill-color: var(--gray);
+    }
+
+    /* BMC Section - REDESIGNED */
+    .bmc {
+      background: var(--darker);
+      padding: 80px 20px;
+    }
+
+    .bmc-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .bmc-top-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .bmc-middle-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    .bmc-bottom-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .bmc-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s;
+    }
+
+    .bmc-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .bmc-card h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    .bmc-card h3 {
+      font-size: 1rem;
+      margin-bottom: 12px;
+      color: var(--light);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .bmc-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .bmc-card li {
+      padding: 6px 0;
+      color: var(--gray);
+      font-size: 0.85rem;
+      padding-left: 15px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .bmc-card li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .bmc-icon {
+      display: none;
+    }
+
+    /* Ecosystem Section */
+    .ecosystem-flow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 50px 0;
+    }
+
+    .flow-item {
+      background: var(--darker);
+      padding: 25px 40px;
+      border-radius: 15px;
+      text-align: center;
+      border: 2px solid rgba(255,255,255,0.1);
+      transition: all 0.3s;
+      min-width: 180px;
+    }
+
+    .flow-item:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .flow-item i {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: var(--gradient-2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .flow-item h4 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
+    .flow-item p {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    .flow-arrow {
+      font-size: 2rem;
+      color: var(--primary);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Contact Section */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .contact-info h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .contact-info > p {
+      color: var(--gray);
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .contact-item i {
+      font-size: 1.5rem;
+      color: var(--secondary);
+      margin-top: 3px;
+    }
+
+    .contact-item div h4 {
+      margin-bottom: 5px;
+      color: var(--light);
+    }
+
+    .contact-item div p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .contact-form {
+      background: var(--darker);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--light);
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--dark);
+      border: 2px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      color: var(--light);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--darker);
+      padding: 60px 20px 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand .logo {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+
+    .footer-brand p {
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-links a {
+      width: 45px;
+      height: 45px;
+      background: var(--dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--light);
+      transition: all 0.3s;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .social-links a:hover {
+      background: var(--gradient-2);
+      transform: translateY(-3px);
+      border-color: transparent;
+    }
+
+    .footer-links h4 {
+      margin-bottom: 20px;
+      color: var(--light);
+      font-size: 1.1rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      padding-left: 5px;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .mobile-menu {
+        display: block;
+      }
+      
+      .hero-container,
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-image {
+        order: -1;
+      }
+      
+      .hero-image-placeholder {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      
+      .bmc-top-row {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .bmc-middle-row,
+      .bmc-bottom-row {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        flex-direction: column;
+      }
+      
+      .bmc-top-row,
+      .bmc-middle-row,
+      .bmc-bottom-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-stats {
+        justify-content: center;
+      }
+      
+      .hero-buttons {
+        justify-content: center;
+      }
+      
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="logo">🧁 Luthé Bakes</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Produk</a></li>
+        <li><a href="#bmc">BMC</a></li>
+        <li><a href="#ecosystem">Digital</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+      <div class="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <div class="hero-content fade-in">
+        <h1>Manis Sederhana, Dibuat dengan Hati</h1>
+        <p>Luthé Bakes adalah homemade bakery dari Metro, Lampung yang fokus pada brownies, bento cake, dan hampers kue kering. Authentic, affordable, dan Gen-Z friendly! 🎂✨</p>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Happy Customers</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4.9⭐</div>
+            <div class="stat-label">Rating</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Signature Products</div>
+          </div>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#products" class="btn btn-primary">
+            <i class="fas fa-shopping-bag"></i>
+            Lihat Produk
+          </a>
+          <a href="#bmc" class="btn btn-secondary">
+            <i class="fas fa-chart-line"></i>
+            Lihat BMC
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero-image fade-in">
+        <div class="hero-image-placeholder" style="background: none; padding: 0; overflow: hidden;">
+          <img src="dapur.jpg" alt="Luthé Bakes - Dapur Homemade Bakery" 
+               style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image fade-in">
+          <div class="about-image-placeholder" style="background: none; padding: 0; overflow: hidden;">
+            <img src="profil.jpg" alt="Luthfianna - Founder Luthé Bakes" 
+                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+          </div>
+        </div>
+        <div class="about-content fade-in">
+          <h3>Dari Dapur Rumah untuk Kamu</h3>
+          <p>Hai, aku Luthfianna! 👋 Luthé Bakes lahir dari passion baking dan keinginan untuk berbagi kebahagiaan melalui kue homemade yang autentik.</p>
+          <p>Dengan fokus pada 3 produk unggulan dan strategi digital yang tepat, Luthé Bakes hadir untuk memenuhi kebutuhan cemilan dan kado manis kamu.</p>
+          <div class="quote">
+            "Ide besar dimulai dari langkah kecil. BMC adalah peta pertamaku menuju kesuksesan!"
+          </div>
+          <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i>
+            Order Sekarang
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Produk Unggulan</h2>
+        <p>Fokus pada kualitas, bukan kuantitas. Setiap produk dibuat dengan bahan pilihan dan penuh cinta.</p>
+      </div>
+
+      <div class="filter-buttons fade-in">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="daily">🍫 Daily</button>
+        <button class="filter-btn" data-filter="po">🎂 Pre-Order</button>
+        <button class="filter-btn" data-filter="seasonal">🎁 Seasonal</button>
+      </div>
+
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card fade-in" data-category="daily">
+          <span class="product-badge badge-daily">Daily Ready</span>
+          <div class="product-image" style="position: relative;">
+            <img src="brownies.jpg" alt="Brownies Luthé - Fudgy coklat pekat" 
+                 style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <span>4.9</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Brownies</div>
+            <h3 class="product-title">Brownies Luthé</h3>
+            <p class="product-desc">Fudgy brownies dengan coklat pekat dan tekstur lembut. Tersedia topping keju, oreo, atau almond. Stok terbatas!</p>
+            <div class="product-footer">
+              <div class="product-price">
+                Rp 35K
+                <span class="original">Rp 45K</span>
+              </div>
+              <a href="https://wa.me/62821779697533?text=Halo%20Luthé%20Bakes,%20saya%20mau%20order%20Brownies" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">
+                Order
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card fade-in" data-category="po">
+          <span class="product-badge badge-po">Pre-Order H-2</span>
+          <div class="product-image" style="position: relative;">
+            <img src="bentocake.jpg" alt="Bento Cake Custom Luthé Bakes" 
+                 style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <span>4.8</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Bento Cake</div>
+            <h3 class="product-title">Bento Cake Custom</h3>
+            <p class="product-desc">Mini cake 10cm (porsi 2-3 orang). Bisa custom nama/ucapan. Tersedia rasa vanilla, coklat, matcha, strawberry dan red velvet.</p>
+            <div class="product-footer">
+              <div class="product-price">
+                Rp 45K
+                <span class="original">Rp 60K</span>
+              </div>
+              <a href="https://wa.me/6282179697533?text=Halo%20Luthé%20Bakes,%20saya%20mau%20order%20Bento%20Cake" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">
+                Order
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card fade-in" data-category="seasonal">
+          <span class="product-badge badge-seasonal">Seasonal</span>
+          <div class="product-image" style="position: relative;">
+            <img src="hampers.jpg" alt="Hampers Kue Kering Luthé Bakes" 
+                 style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <span>4.9</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Hampers</div>
+            <h3 class="product-title">Hampers Kue Kering</h3>
+            <p class="product-desc">Nastar, kastengel, dan choco cookies premium. Cocok untuk Lebaran, Natal, atau kado arisan. PO H-14.</p>
+            <div class="product-footer">
+              <div class="product-price">
+                Rp 40K
+                <span class="original">Rp 90K</span>
+              </div>
+              <a href="https://wa.me/6282179697533?text=Halo%20Luthé%20Bakes,%20saya%20mau%20order%20Hampers" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">
+                Order
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BMC Section -->
+  <section class="bmc" id="bmc">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Business Model Canvas</h2>
+        <p>Strategi bisnis yang terstruktur dan inovatif untuk Luthé Bakes</p>
+      </div>
+
+      <div class="bmc-container fade-in">
+        <!-- Top Row: 5 Kolom -->
+        <div class="bmc-top-row">
+          <div class="bmc-card">
+            <h4>Key Partners</h4>
+            <h3>Mitra Utama</h3>
+            <ul>
+              <li>Supplier bahan baku lokal</li>
+              <li>Jasa kurir (GoSend, J&T)</li>
+              <li>Teman & keluarga (reseller)</li>
+              <li>Food blogger & KOL</li>
+              <li>Platform digital (IG, TikTok)</li>
+            </ul>
+          </div>
+
+          <div class="bmc-card">
+            <h4>Key Activities</h4>
+            <h3>Aktivitas Utama</h3>
+            <ul>
+              <li>Produksi kue by order</li>
+              <li>Riset & eksperimen resep</li>
+              <li>Foto konten produk</li>
+              <li>Manajemen jadwal PO</li>
+              <li>Pengemasan estetik</li>
+            </ul>
+          </div>
+
+          <div class="bmc-card">
+            <h4>Value Proposition</h4>
+            <h3>Nilai yang Ditawarkan</h3>
+            <ul>
+              <li>Rasa homemade autentik</li>
+              <li>Bisa custom rasa & desain</li>
+              <li>Harga terjangkau</li>
+              <li>Kemasan estetik & instagramable</li>
+              <li>Bahan berkualitas, tanpa pengawet</li>
+            </ul>
+          </div>
+
+          <div class="bmc-card">
+            <h4>Customer Relationships</h4>
+            <h3>Hubungan Pelanggan</h3>
+            <ul>
+              <li>Pesan personal via WhatsApp & DM</li>
+              <li>Update progres baking</li>
+              <li>Diskon repeat order</li>
+              <li>Minta review & tag sosmed</li>
+            </ul>
+          </div>
+
+          <div class="bmc-card">
+            <h4>Customer Segments</h4>
+            <h3>Target Pelanggan</h3>
+            <ul>
+              <li>Teman, keluarga & kenalan</li>
+              <li>Gen Z & milenial</li>
+              <li>Pencinta hadiah aesthetic</li>
+              <li>Orang tua cari birthday cake</li>
+              <li>Komunitas & kantor</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Middle Row: 2 Kolom -->
+        <div class="bmc-middle-row">
+          <div class="bmc-card">
+            <h4>Key Resources</h4>
+            <h3>Sumber Daya Utama</h3>
+            <ul>
+              <li>Keahlian baking & resep andalan</li>
+              <li>Peralatan dapur: oven, mixer, loyang</li>
+              <li>Dapur rumah sebagai produksi</li>
+              <li>Akun sosmed & portofolio foto</li>
+            </ul>
+          </div>
+
+          <div class="bmc-card">
+            <h4>Channels</h4>
+            <h3>Saluran Distribusi</h3>
+            <ul>
+              <li>Instagram & TikTok - foto + video</li>
+              <li>WhatsApp Business - PO & broadcast</li>
+              <li>Shopee / Tokopedia</li>
+              <li>Word of mouth</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Row: 2 Kolom -->
+        <div class="bmc-bottom-row">
+          <div class="bmc-card">
+            <h4>Cost Structure</h4>
+            <h3>Struktur Biaya</h3>
+            <ul>
+              <li><strong>Biaya Produksi:</strong> Bahan baku (tepung, butter, gula, coklat)</li>
+              <li>Kemasan, box, stiker & ribbon</li>
+              <li>Gas & listrik dapur</li>
+              <li><strong>Biaya Operasional:</strong> Ongkos kirim, promosi, perawatan alat</li>
+            </ul>
+          </div>
+
+          <div class="bmc-card">
+            <h4>Revenue Streams</h4>
+            <h3>Sumber Pendapatan</h3>
+            <ul>
+              <li><strong>Penjualan Produk:</strong> Birthday cake (Rp 150-500rb)</li>
+              <li>Brownies loyang/slice (Rp 35-80rb)</li>
+              <li>Cookies & kue kering (Rp 50-150rb)</li>
+              <li><strong>Paket Spesial:</strong> Hampers lebaran & natal</li>
+              <li>Snack box komunitas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem Section -->
+  <section class="ecosystem" id="ecosystem">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Digital Ecosystem</h2>
+        <p>Strategi marketing terintegrasi untuk menjangkau Gen-Z</p>
+      </div>
+
+      <div class="ecosystem-flow fade-in">
+        <div class="flow-item">
+          <i class="fab fa-tiktok"></i>
+          <h4>TikTok</h4>
+          <p>Awareness & Viral</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item">
+          <i class="fab fa-instagram"></i>
+          <h4>Instagram</h4>
+          <p>Trust & Katalog</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item">
+          <i class="fas fa-globe"></i>
+          <h4>Blog</h4>
+          <p>Informasi Lengkap</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item">
+          <i class="fab fa-whatsapp"></i>
+          <h4>WhatsApp</h4>
+          <p>Konfirmasi & Order</p>
+        </div>
+      </div>
+
+      <div class="section-header fade-in" style="margin-top: 60px;">
+        <h3>Konten TikTok Strategy</h3>
+        <p>3-4 video per minggu untuk maximize reach & engagement</p>
+      </div>
+
+      <div class="products-grid" style="margin-top: 40px;">
+        <div class="product-card fade-in">
+          <div class="product-info" style="text-align: center; padding: 30px;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">🎬</div>
+            <h4 style="margin-bottom: 10px;">Behind-The-Scenes</h4>
+            <p style="color: var(--gray); font-size: 0.95rem;">Day in my life mahasiswa + baker, proses baking, dapur realistis</p>
+          </div>
+        </div>
+        <div class="product-card fade-in">
+          <div class="product-info" style="text-align: center; padding: 30px;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">🎥</div>
+            <h4 style="margin-bottom: 10px;">ASMR & Satisfying</h4>
+            <p style="color: var(--gray); font-size: 0.95rem;">Mixing brownies, decorating bento cake, tekstur produk</p>
+          </div>
+        </div>
+        <div class="product-card fade-in">
+          <div class="product-info" style="text-align: center; padding: 30px;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">💬</div>
+            <h4 style="margin-bottom: 10px;">Storytelling</h4>
+            <p style="color: var(--gray); font-size: 0.95rem;">Testimoni pelanggan, journey bisnis, tips & edukasi</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2>Mulai Order Sekarang!</h2>
+        <p>Siap maniskan harimu? Hubungi kami dan rasakan perbedaan homemade bakery yang autentik.</p>
+      </div>
+
+      <div class="contact-wrapper">
+        <div class="contact-info fade-in">
+          <h3>Informasi Kontak</h3>
+          <p>Kami siap melayani order dan pertanyaan kamu. Jangan ragu untuk menghubungi kami!</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Lokasi</h4>
+                <p>Metro, Lampung, Indonesia<br>(Pickup point tersedia)</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-whatsapp"></i>
+              <div>
+                <h4>WhatsApp</h4>
+                <p>+62 821-7969-7533<br>Senin - Sabtu, 08:00 - 20:00</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-instagram"></i>
+              <div>
+                <h4>Instagram</h4>
+                <p>@luthebakes<br>DM untuk order & pertanyaan</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-tiktok"></i>
+              <div>
+                <h4>TikTok</h4>
+                <p>@luthebakes<br>Follow untuk konten seru!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form fade-in">
+          <form id="orderForm">
+            <div class="form-group">
+              <label for="name">Nama Lengkap</label>
+              <input type="text" id="name" name="name" required placeholder="Masukkan nama kamu">
+            </div>
+            <div class="form-group">
+              <label for="whatsapp">Nomor WhatsApp</label>
+              <input type="tel" id="whatsapp" name="whatsapp" required placeholder="08xx-xxxx-xxxx">
+            </div>
+            <div class="form-group">
+              <label for="product">Pilih Produk</label>
+              <select id="product" name="product" required>
+                <option value="">Pilih produk yang ingin dipesan...</option>
+                <option value="brownies">Brownies Luthé - Rp 35K</option>
+                <option value="bento">Bento Cake - Rp 45K</option>
+                <option value="hampers">Hampers Kue Kering - Rp 40K</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Pesan/Catatan</label>
+              <textarea id="message" name="message" placeholder="Contoh: Custom nama untuk bento cake, topping brownies, dll..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+              <i class="fab fa-whatsapp"></i>
+              Kirim via WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">🧁 Luthé Bakes</div>
+        <p>Homemade bakery dari Metro, Lampung yang fokus pada kualitas, keautentikan, dan kebahagiaan pelanggan. Dibuat dengan cinta oleh Luthfianna💗.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/ltf.anna_?igsh=cG1heWlxd2FvcnVh" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@laufeyanne?_r=1&_t=ZS-95ki3p4Mtog" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/628279697533" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Produk</h4>
+        <ul>
+          <li><a href="#products">Brownies</a></li>
+          <li><a href="#products">Bento Cake</a></li>
+          <li><a href="#products">Hampers</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#bmc">Business Model</a></li>
+          <li><a href="#contact">Cara Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Tugas</h4>
+        <ul>
+          <li><a href="#">Business Model Canvas</a></li>
+          <li><a href="#">Pengembangan Bisnis</a></li>
+          <li><a href="#">Gen-Z Creative</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Luthé Bakes. All rights reserved. | Dibuat untuk Tugas BMC Kelas 6 SI</p>
+      <p style="margin-top: 8px; font-size: 0.85rem;">Built with 💜 by Luthfi Anna Hafifah | Gen-Z Creative & Innovative</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Filter products
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        productCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            }, 10);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.8)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+
+    // Form submission
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const whatsapp = document.getElementById('whatsapp').value;
+      const product = document.getElementById('product').value;
+      const message = document.getElementById('message').value;
+
+      const productNames = {
+        'brownies': 'Brownies Luthé',
+        'bento': 'Bento Cake',
+        'hampers': 'Hampers Kue Kering'
+      };
+
+      const text = `Halo Luthé Bakes!%0A%0ASaya mau order:%0A📛 Nama: ${name}%0A📱 WA: ${whatsapp}%0A🍰 Produk: ${productNames[product]}%0A💬 Pesan: ${message || '-'}%0A%0ATerima kasih!`;
+      
+      window.open(`https://wa.me/6282179697533?text=${text}`, '_blank');
+    });
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Parallax effect
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const heroImage = document.querySelector('.hero-image');
+      if (heroImage) {
+        heroImage.style.transform = `translateY(${scrolled * 0.5}px)`;
+      }
+    });
+  </script>
+</body>
+</html>
